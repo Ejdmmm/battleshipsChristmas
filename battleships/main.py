@@ -1,8 +1,8 @@
 """
 random and main code
 """
-import localization
 import random
+import localization
 
 SELECTED_LANG = "en"
 
@@ -30,6 +30,9 @@ def user_choosing():
 
         localization.print_localization(SELECTED_LANG,"bad_type_choose")
 def start_game():
+    """
+    starting game
+    """
     board = []
     board_size = user_choosing()
     for game in range(board_size):
@@ -40,6 +43,9 @@ def start_game():
     play(board, enemies, board_size)
 
 def print_board(board):
+    """
+    printing board to console
+    """
     for row in board:
         print(" ".join(row))
 def gen_boats(enemies_count, board_size):

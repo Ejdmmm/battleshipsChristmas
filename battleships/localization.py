@@ -21,26 +21,28 @@ TEXT = {
         "cs": "Vyber velikost pole, na kterem chces hrat.",
         "en": "Choose board size."
     },
-     "bad_type_choose" : {
+    "bad_type_choose" : {
         "cs": "Vybral jsi spatny typ.",
         "en": "You choode bad type."
 
-    },  "enter_x" : {
+    }, 
+    "enter_x" : {
         "cs": "Vyber x-ovou souradnici.",
         "en": "Choose x coordinate."
 
-    },  "enter_y" : {
+    }, 
+    "enter_y" : {
         "cs": "Vyber y souradnici.",
         "en": "Choose y coordinate."
     },
-        "miss": {
+    "miss": {
         "cs": "Netrefil ses vole",
         "eng": "Sorry you missed",
-        },
-        "hit": {
+    },
+    "hit": {
         "cs": "Nekecej, zasah!",
         "eng": "You sunk my ship :-(",
-        }
+    }
 }
 def print_localization(lang, text):
     if text in TEXT.keys():
