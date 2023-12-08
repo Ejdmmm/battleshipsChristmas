@@ -3,6 +3,9 @@ random and main code
 """
 import random
 import localization
+import class_date
+import pickle
+import os
 
 SELECTED_LANG = "en"
 
@@ -48,6 +51,7 @@ def print_board(board):
     """
     for row in board:
         print(" ".join(row))
+
 def gen_boats(enemies_count, board_size):
     enemies = []
     for x in range (enemies_count):
@@ -73,6 +77,34 @@ def play(board, enemies, board_size):
             board[index] = board[index][:y] + list("X") + board[index][y + 1:]
             localization.print_localization(SELECTED_LANG, "hit")
         # zvolit pokusy na základě boardu, kolik měl pokusu, kdy vyhral
+
+def print_last_played_time():
+    file_path = 'serialized_obj.bin'
+    if os.path.exists(file_path):
+        print('The file exists!')
+    else:
+        print('The file does not exist.')
+
+    deserialized_obj = pickle.loads(file_path)
+    with open(file_path, "rb") as file:
+        serialized_obj = file.read()
+    deserialized_obj.print_date()
+
+def write_last_played_time():
+    file_path = 'serialized_obj.bin'
+    if os.path.exists(file_path):
+        print('The file exists!')
+    else:
+        print('The file does not exist.')
+
+    new_play = class_date.PlayedTime()
+    serialized_obj = pickle.dumps(new_play)
+    with open(file_path, "wb") as file:
+        file.write(serialized_obj)
+
 if __name__ == "__main__": ## volat metody sem
+    print_last_played_time()
     SELECTED_LANG = get_lang_setting_from_user()
     start_game()
+    write_last_played_time()
+    
