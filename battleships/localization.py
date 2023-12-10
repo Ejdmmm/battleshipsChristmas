@@ -1,3 +1,4 @@
+
 LANG_EN = "en"
 LANG_CS = "cs"
 
@@ -11,8 +12,8 @@ TEXT = {
         "en": "Choose language, en = English, cs = Czech",
     },
     "selected" : {
-        "cs": "Vybral jsi cesky jazyk, dobra volba!",
-        "en": "You choose English, you traitor!"
+        "en": "You choose English!",
+        "cs": "Vybral jsi cesky jazyk, dobra volba!"
     },
     "bad_lang" : {
         "en": "You choose bad language, choose other please."
@@ -37,14 +38,27 @@ TEXT = {
     },
     "miss": {
         "cs": "Netrefil ses vole",
-        "eng": "Sorry you missed",
+        "en": "Sorry, you missed"
     },
     "hit": {
         "cs": "Nekecej, zasah!",
-        "eng": "You sunk my ship :-(",
-    }
+        "en": "You sunk my ship :-("
+    },
+    "over": {
+        "cs": "Konec hry!",
+        "en":"Game over!"
+            },
+    "date":{
+        "cs": "Dneska je:",
+        "en": "Today is:"
+    },
+    "time":{
+        "cs": "Čas je:",
+        "en": "Time is:"
+    },
 }
 def print_localization(lang, text):
+
     if text in TEXT.keys():
         print(TEXT[text][lang])
     else:
