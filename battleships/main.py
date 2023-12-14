@@ -24,7 +24,6 @@ def get_lang_setting_from_user():
                 return selected_lang
         else:
             if selected_lang == "cs":
-                # Handle the case when Czech is selected
                 return selected_lang
             else:
                 localization.print_localization(SELECTED_LANG, "bad_lang")
