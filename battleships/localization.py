@@ -1,4 +1,6 @@
-
+"""
+languages
+"""
 LANG_EN = "en"
 LANG_CS = "cs"
 
@@ -29,12 +31,12 @@ TEXT = {
         "cs": "Vybral jsi spatny typ.",
         "en": "You choode bad type."
 
-    }, 
+    },
     "enter_x" : {
         "cs": "Vyber x-ovou souradnici.",
         "en": "Choose x coordinate."
 
-    }, 
+    },
     "enter_y" : {
         "cs": "Vyber y souradnici.",
         "en": "Choose y coordinate."
@@ -65,6 +67,9 @@ TEXT = {
     }
 }
 def print_localization(lang, text):
+    """
+    printing localization
+    """
 
     if text in TEXT.keys():
         print(TEXT[text][lang])

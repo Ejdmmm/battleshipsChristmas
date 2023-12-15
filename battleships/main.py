@@ -51,7 +51,7 @@ def start_game():
     print(current_time)
     board = []
     board_size = user_choosing()
-    for game in range(board_size):
+    for _ in range(board_size):
         board.append(["O"]* board_size)
     enemies = gen_boats(5, board_size)
     print_board(board)
@@ -70,7 +70,7 @@ def gen_boats(enemies_count, board_size):
     generating boats in field
     """
     enemies = []
-    for x in range (enemies_count):
+    for _ in range (enemies_count):
         boat_x = random.randint(0, board_size - 1)
         boat_y = random.randint(0, board_size - 1)
         enemies.append((boat_x, boat_y))
@@ -86,16 +86,16 @@ def play(board, enemies, board_size):
     while attempts < 25:
         print_board(board)
         localization.print_localization(SELECTED_LANG, "enter_x")
-        x = int(input())
+        x_cordinate = int(input())
         localization.print_localization(SELECTED_LANG, "enter_y")
-        y = int(input())
-        point = (x, y)
+        y_cordinate = int(input())
+        point = (x_cordinate, y_cordinate)
         if point not in enemies:
             localization.print_localization(SELECTED_LANG, "miss")
         else:
-            index = x
-            print(board[index][:y])
-            board[index] = board[index][:y] + list("X") + board[index][y + 1:]
+            index = x_cordinate
+            print(board[index][:y_cordinate])
+            board[index] = board[index][:y_cordinate] + list("X") + board[index][y_cordinate + 1:]
             localization.print_localization(SELECTED_LANG, "hit")
             hit_count += 1
             if hit_count ==5:
@@ -111,6 +111,9 @@ def save_res(attempts): #uklada vysledky
     with open("results.txt", "a") as file:  # otevre soubor
         file.write(str(attempts) + "\n")
 def read_res(): #cte vysledky
+    """
+    reading results to txt file
+    """
     results = []
     with open("results.txt", "r") as file:
         for line in file:
