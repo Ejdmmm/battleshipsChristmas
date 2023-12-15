@@ -1,1 +1,1 @@
-Nejlepší hra na světě dej nam za jedna mame tě radi Lukaši
+Nejlepší hra na světě dej nám za jedna prosím máme tě rádi Lukáši
